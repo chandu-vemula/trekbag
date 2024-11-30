@@ -1,13 +1,7 @@
+import { secondaryButtons } from "../lib/constants";
 import Button from "./Button";
 
 function ButtonGroup() {
-  const secondaryButtons = [
-    "Mark as complete",
-    "Mark as incomplete",
-    "Reset to initial",
-    "Remove all items",
-  ];
-
   return (
     <section className="button-group">
       {/* <Button type="secondary">Mark as complete</Button>
