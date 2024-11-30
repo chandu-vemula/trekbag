@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { initialItems } from "../lib/constants";
 
 function ItemList() {
+  const [items, setItems] = useState(initialItems);
   return (
     <ul>
-      {initialItems.map((item) => {
+      {items.map((item) => {
         return <Item key={item.id} item={item} />;
       })}
     </ul>
@@ -19,6 +21,7 @@ function Item({ item }) {
         <input checked={item.packed} type="checkbox" />
         {item.name}
       </label>
+      <button>❌</button>
     </li>
   );
 }
