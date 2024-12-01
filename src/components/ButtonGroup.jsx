@@ -7,6 +7,7 @@ function ButtonGroup({
   handleMarkAllAsComplete,
   handleMarkAllAsIncomplete,
 }) {
+  // Add secondary button attributes into an array of objects
   const secondaryButtons = [
     {
       text: " Mark as complete",
