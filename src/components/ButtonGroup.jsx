@@ -7,9 +7,27 @@ function ButtonGroup({
   handleMarkAllAsComplete,
   handleMarkAllAsIncomplete,
 }) {
+  const secondaryButtons = [
+    {
+      text: " Mark as complete",
+      onClick: handleMarkAllAsComplete,
+    },
+    {
+      text: " Mark as incomplete",
+      onClick: handleMarkAllAsIncomplete,
+    },
+    {
+      text: " Reset to initial",
+      onClick: handleResetToInitial,
+    },
+    {
+      text: " Remove all items",
+      onClick: handleRemoveAllItems,
+    },
+  ];
   return (
     <section className="button-group">
-      <Button onClick={handleMarkAllAsComplete} buttonType="secondary">
+      {/* <Button onClick={handleMarkAllAsComplete} buttonType="secondary">
         Mark as complete
       </Button>
       <Button onClick={handleMarkAllAsIncomplete} buttonType="secondary">
@@ -20,15 +38,19 @@ function ButtonGroup({
       </Button>
       <Button onClick={handleRemoveAllItems} buttonType="secondary">
         Remove all items
-      </Button>
+      </Button> */}
 
-      {/* {secondaryButtons.map((text) => {
+      {secondaryButtons.map((button) => {
         return (
-          <Button key={text} type="secondary">
-            {text}
+          <Button
+            key={button.text + button.onClick.toString()}
+            type="secondary"
+            onClick={button.onClick}
+          >
+            {button.text}
           </Button>
         );
-      })} */}
+      })}
     </section>
   );
 }
